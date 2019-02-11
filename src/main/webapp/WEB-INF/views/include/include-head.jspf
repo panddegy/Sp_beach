@@ -11,5 +11,9 @@
 		$("#btn_home").click(function(){
 			location.href="main"
 		})
+		$(".sub_btn").click(function(){
+			var beach_id=$(this).attr("data-beach-id")
+			location.href="/beach/ex?id="+beach_id
+		})
 	})
 </script>

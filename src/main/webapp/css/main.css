@@ -6,7 +6,8 @@
 	-moz-box-sizing: border-box;
 }
 body{
-	max-width: 90%
+	max-width: 90%;
+	margin: 0 auto;
 }
 
 header{
@@ -18,13 +19,13 @@ header{
 	font-style: italic;	
 }
 
-nav{
-	background-color: lightblue;
-	color: white;
+section{
+	margin-top: 50px;	
 }
 
 fieldset{
 	width: 800px;
+	margin-left: 20px;
 	
 }
 legend{
@@ -33,3 +34,66 @@ legend{
 	font-style: italic;
 	
 }
+#btn_home{
+	border: none;
+	font-size: 30px;
+	color: white;
+	background-color: lightblue;
+	font-style: italic;
+	cursor: pointer;
+	
+}
+.main_btn{
+	color: white;
+	background-color: lightblue;
+	width: 100px;
+	padding: 8px 16px;
+	outline: 1px solid rgba(174, 216, 230, 1);
+	transition-duration: 0.5s;
+	cursor: pointer;
+	border: 1px solid rgba(174, 216, 230, 0);
+}
+#main_btn_wrapper{
+	width: 150px;
+	height: 500px;
+	float: left;
+}
+.sub_btn{
+	color: white;
+	background-color: lightblue;
+	width: 250px;
+	padding: 8px 16px;
+	outline: 1px solid rgba(174, 216, 230, 1);
+	transition-duration: 0.5s;
+	cursor: pointer;
+	border: 1px solid rgba(174, 216, 230, 0);
+}
+#sub_btn_wrapper{
+	width: 300px;
+	overflow: scroll;
+	overflow-x: hidden;
+	height: 800px;
+	float: left;
+	
+}
+#ex_btn_wrapper{
+	width: 900px;
+	margin-left: 20px;
+	float: left;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

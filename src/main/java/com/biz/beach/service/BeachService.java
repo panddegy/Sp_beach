@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service;
 
 import com.biz.beach.model.BeachDao;
 import com.biz.beach.model.BeachVO;
+import com.biz.beach.model.MemoVO;
 
 @Service
 public class BeachService {
@@ -21,5 +22,24 @@ public class BeachService {
 		return beachList;
 	}
 	
+	public BeachVO findByName(long id){
+		
+		BeachVO beach=beachMapper.findByName(id);
+		
+		return beach;
+	}
+
+	public List<MemoVO> findByMemo(long id) {
+
+		List<MemoVO> memo=beachMapper.findByMemo(id);
+		
+		return memo;
+	}
 	
+	public int insert(MemoVO vo) {
+		
+		int ret=beachMapper.insert(vo);
+				
+		return ret;
+	}
 }

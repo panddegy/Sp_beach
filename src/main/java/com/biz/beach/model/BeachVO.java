@@ -7,6 +7,7 @@ public class BeachVO {
 	private String b_addr;
 	private String b_tel;
 	private String b_homepage;
+	private long id;
 	public String getB_name() {
 		return b_name;
 	}
@@ -34,21 +35,28 @@ public class BeachVO {
 	public String getB_homepage() {
 		return b_homepage;
 	}
-	public void setB_homepage(String b_hompage) {
-		this.b_homepage = b_hompage;
+	public void setB_homepage(String b_homepage) {
+		this.b_homepage = b_homepage;
+	}
+	public long getId() {
+		return id;
+	}
+	public void setId(long id) {
+		this.id = id;
 	}
 	@Override
 	public String toString() {
 		return "BeachVO [b_name=" + b_name + ", b_explain=" + b_explain + ", b_addr=" + b_addr + ", b_tel=" + b_tel
-				+ ", b_hompage=" + b_homepage + "]";
+				+ ", b_homepage=" + b_homepage + ", id=" + id + "]";
 	}
-	public BeachVO(String b_name, String b_explain, String b_addr, String b_tel, String b_hompage) {
+	public BeachVO(String b_name, String b_explain, String b_addr, String b_tel, String b_homepage, long id) {
 		super();
 		this.b_name = b_name;
 		this.b_explain = b_explain;
 		this.b_addr = b_addr;
 		this.b_tel = b_tel;
-		this.b_homepage = b_hompage;
+		this.b_homepage = b_homepage;
+		this.id = id;
 	}
 	public BeachVO() {
 		super();
