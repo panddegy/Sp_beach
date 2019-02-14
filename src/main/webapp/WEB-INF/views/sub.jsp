@@ -8,22 +8,30 @@
 </head>
 <body>
 	<header>
-		<button id="btn_home">해수욕장 정보</button>
+		<button id="btn_home" title="Home">Korea Beach Infomation</button>
+	<nav>
+		<button class="main_btn" title="인천, 경기도" id="btn_gg">Gyeonggi</button>
+		<button class="main_btn" title="충청도" id="btn_cc">Chungcheong</button>
+		<button class="main_btn" title="강원도" id="btn_gw">Gangwon</button>
+		<button class="main_btn" title="부산, 울산, 경상도" id="btn_gs">Gyeongsang</button>
+		<button class="main_btn" title="전라도" id="btn_jl">Jeonla</button>
+		<button class="main_btn" title="제주특별자치도" id="btn_jj">Jeju</button>
+	</nav>
 	</header>
 	<section>
-	<div id="main_btn_wrapper">
-		<button class="main_btn" id="btn_gg">경기도</button>
-		<button class="main_btn" id="btn_cc">충청도</button>
-		<button class="main_btn" id="btn_gw">강원도</button>
-		<button class="main_btn" id="btn_gs">경상도</button>
-		<button class="main_btn" id="btn_cr">전라도</button>
-		<button class="main_btn" id="btn_jj">제주도</button>
-	</div>
-	<div id="sub_btn_wrapper">
+	
 		<c:forEach var="vo" items="${BLIST}">
-			<button class="sub_btn" id="${vo.b_name}" data-beach-id="${vo.id}">${vo.b_name}</button>
+			<div class="sub_btn_wrapper animatable fadeInUp" >
+				<button class="sub_btn" id="${vo.title}" data-beach-id="${vo.b_id}">${vo.title}</button>
+				<div class="sub_img_wrapper">
+				<img class="sub_img" alt="해수욕장사진" src="${vo.imgurl}" width="280" height="180" data-beach-id="${vo.b_id}">
+				</div>
+			</div>
 		</c:forEach>
-	</div>
+	
 	</section>
+	<footer>
+	
+	</footer>
 </body>
 </html>

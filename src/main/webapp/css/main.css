@@ -6,94 +6,271 @@
 	-moz-box-sizing: border-box;
 }
 body{
-	max-width: 90%;
+	max-width: 80%;
 	margin: 0 auto;
 }
 
 header{
-	background-color: lightblue;
-	font-size: 30px;
-	padding: 1em;
-	font-weight: bold;
-	color: white;
-	font-style: italic;	
+	background-color: white;
+	color: dodgerblue;
 }
-
+nav{
+	background-color: white;
+	border: none;
+	border-bottom: 1px solid dodgerblue;
+	border-top: 1px solid dodgerblue;
+	text-align: center;
+}
 section{
-	margin-top: 50px;	
+	max-width: 80%;
+	margin: 0px auto;
+	margin-top: 50px;
 }
-
-fieldset{
-	width: 800px;
-	margin-left: 20px;
-	
-}
-legend{
-	font-size: 20px;
-	font-weight: bold;
-	font-style: italic;
-	
+footer{
+	height: 100px;
+	margin-top: 50px;
+	margin-bottom: 100px;
+	border: none;
+	border-bottom: 1px solid dodgerblue;
+	border-top: 1px solid dodgerblue;
 }
 #btn_home{
 	border: none;
-	font-size: 30px;
-	color: white;
-	background-color: lightblue;
+	background-color: white;
+	color: dodgerblue;
+	font-size: 35px;
 	font-style: italic;
 	cursor: pointer;
-	
 }
+
 .main_btn{
-	color: white;
-	background-color: lightblue;
-	width: 100px;
-	padding: 8px 16px;
-	outline: 1px solid rgba(174, 216, 230, 1);
-	transition-duration: 0.5s;
+	padding: 4px 16px;
+	margin: none;
+	margin-left: 10px;
+	margin-right: 10px;
+	background-color: white;
+	border: none;
+	color: dodgerblue;
+	font-size: 15px;
 	cursor: pointer;
-	border: 1px solid rgba(174, 216, 230, 0);
+	text-decoration: none;
+	transition-duration: 0.5s;
 }
-#main_btn_wrapper{
-	width: 150px;
-	height: 500px;
-	float: left;
+.main_btn:hover{
+	background-color: dodgerblue;
+	color: white;	
 }
+.sub_btn_wrapper{
+	display: inline-block;
+	width: 280px;
+	height: 210px;
+	margin: 10px;
+}
+
 .sub_btn{
-	color: white;
-	background-color: lightblue;
-	width: 250px;
-	padding: 8px 16px;
-	outline: 1px solid rgba(174, 216, 230, 1);
-	transition-duration: 0.5s;
+	display: block;
+	padding: 4px;
+	margin: none;
+	background-color: rgba(255,255,255,0);
+	border: none;
+	color: dodgerblue;
+	font-size: 15px;
 	cursor: pointer;
-	border: 1px solid rgba(174, 216, 230, 0);
+	text-decoration: none;
+	transition-duration: 0.5s;
 }
-#sub_btn_wrapper{
-	width: 300px;
-	overflow: scroll;
-	overflow-x: hidden;
-	height: 800px;
-	float: left;
+.sub_btn:hover{
+	background-color: dodgerblue;
+	color: white;	
+}
+
+.animatable {
+  
+  visibility: hidden;
+  
+  -webkit-animation-play-state: paused;   
+  -moz-animation-play-state: paused;     
+  animation-play-state: paused; 
+}
+
+.animated {
+  visibility: visible;
+  
+  -webkit-animation-fill-mode: both;
+  -moz-animation-fill-mode: both;
+  animation-fill-mode: both;
+  
+  -webkit-animation-duration: 0.5s;
+  -moz-animation-duration: 0.5s;
+  animation-duration: 0.5s;
+
+  -webkit-animation-play-state: running;
+  -moz-animation-play-state: running;
+  animation-play-state: running;
+}
+@-webkit-keyframes fadeInUp {
+	from {
+		opacity: 0;
+		-webkit-transform: translateY(20px);
+	}	
+	to {
+		opacity: 1;
+		-webkit-transform: translateY(0);
+	}
+}
+
+@-moz-keyframes fadeInUp {
+	from {
+		opacity: 0;
+		-moz-transform: translateY(20px);
+	}
+	to {
+		opacity: 1;
+		-moz-transform: translateY(0);
+	}
+}
+
+@keyframes fadeInUp {
+	from {
+		opacity: 0;
+		transform: translateY(20px);
+	}
+	to {
+		opacity: 1;
+		transform: translateY(0);
+	}
+}
+
+.main_fieldset{
+	width: 80%;
+	height: 300px;
+	margin: 0 auto;
+	margin-bottom: 50px;
+	color: dodgerblue;	
+	border: 1px solid dodgerblue;
 	
 }
-#ex_btn_wrapper{
-	width: 900px;
-	margin-left: 20px;
-	float: left;
+
+.main_legend{
+	color: dodgerblue;
+	font-size: 20px;
+	font-style: italic;
 }
 
+.animated.fadeInUp {
+	-webkit-animation-name: fadeInUp;
+	-moz-animation-name: fadeInUp;
+	animation-name: fadeInUp;
+}
 
+#ex_fieldset{
+	max-width: 1000px;
+	margin: 0 auto;
+	margin-bottom: 50px;
+	color: dodgerblue;	
+	border: 1px solid dodgerblue;
+	text-align: center;
+}
+#ex_legend{
+	color: dodgerblue;
+	font-size: 30px;
+	font-style: italic;
+	cursor: pointer;
+}
+#ex_img{
+	float: left;
+	margin: 10px;
+}
+#ex_map{
+	float: left;
+	margin: 10px;
+	
+}
+#ex_text{
+	width: 100%;
+	display: inline-block;
+	margin: 0 auto;
+	text-align: left;
+	
+}
+#ex_subtitle{
+	font-size: 20px;
+}
 
+#btn_submit{
+	padding: 4px;
+	margin: none;
+	background-color: rgba(255,255,255,0);
+	border: 1px solid dodgerblue;
+	color: dodgerblue;
+	font-size: 15px;
+	cursor: pointer;
+	text-decoration: none;
+	transition-duration: 0.5s;
+}
+#btn_submit:hover{
+	background-color: dodgerblue;
+	color: white;	
+}
 
+#m_auth{
+	padding: 4px 8px;
+	max-width: 100px;
+}
 
+#m_memo{
+	padding: 4px 8px;
+	max-width: 500px;
+}
 
+#view_memo{
+	width: 500px;
+}
+#view_date{
+	width: 100px;
+	
+}
+#view_auth{
+	width: 100px;
+	
+}
+#view_title{
+	width: 150px;
+	
+}
+#views{
+	margin: 0 auto;
+	font-size: 15px;
+	text-align: left;
+}
+#main_list{
+	cursor: pointer;
+}
 
+#main_td{
+	border-spacing: 10px;
+}
+.sub_img_wrapper{
+	max-width: 280px;
+	height: 180px;
+	overflow: hidden;
+}
 
+.main_img_wrapper{
+	max-width: 160px;
+	height: 120px;
+	overflow: hidden;
+}
 
+.sub_img{
+	transition-duration: 0.5s;
+	cursor: pointer;
+}
 
+.sub_img:hover{
+	transform: scale(1.1);
+}
 
-
-
-
-
-
+#main_table{
+	max-width: 100%;
+}

@@ -2,64 +2,98 @@ package com.biz.beach.model;
 
 public class BeachVO {
 
-	private String b_name;
-	private String b_explain;
-	private String b_addr;
-	private String b_tel;
-	private String b_homepage;
-	private long id;
-	public String getB_name() {
-		return b_name;
+    private int b_id, hotm;
+    private String title, subtitle, topic, area, addr, tel, homepage, mapurl, imgurl;
+	public int getB_id() {
+		return b_id;
 	}
-	public void setB_name(String b_name) {
-		this.b_name = b_name;
+	public void setB_id(int b_id) {
+		this.b_id = b_id;
 	}
-	public String getB_explain() {
-		return b_explain;
+	public int getHotm() {
+		return hotm;
 	}
-	public void setB_explain(String b_explain) {
-		this.b_explain = b_explain;
+	public void setHotm(int hotm) {
+		this.hotm = hotm;
 	}
-	public String getB_addr() {
-		return b_addr;
+	public String getTitle() {
+		return title;
 	}
-	public void setB_addr(String b_addr) {
-		this.b_addr = b_addr;
+	public void setTitle(String title) {
+		this.title = title;
 	}
-	public String getB_tel() {
-		return b_tel;
+	public String getSubtitle() {
+		return subtitle;
 	}
-	public void setB_tel(String b_tel) {
-		this.b_tel = b_tel;
+	public void setSubtitle(String subtitle) {
+		this.subtitle = subtitle;
 	}
-	public String getB_homepage() {
-		return b_homepage;
+	public String getTopic() {
+		return topic;
 	}
-	public void setB_homepage(String b_homepage) {
-		this.b_homepage = b_homepage;
+	public void setTopic(String topic) {
+		this.topic = topic;
 	}
-	public long getId() {
-		return id;
+	public String getArea() {
+		return area;
 	}
-	public void setId(long id) {
-		this.id = id;
+	public void setArea(String area) {
+		this.area = area;
+	}
+	public String getAddr() {
+		return addr;
+	}
+	public void setAddr(String addr) {
+		this.addr = addr;
+	}
+	public String getTel() {
+		return tel;
+	}
+	public void setTel(String tel) {
+		this.tel = tel;
+	}
+	public String getHomepage() {
+		return homepage;
+	}
+	public void setHomepage(String homepage) {
+		this.homepage = homepage;
+	}
+	public String getMapurl() {
+		return mapurl;
+	}
+	public void setMapurl(String mapurl) {
+		this.mapurl = mapurl;
+	}
+	public String getImgurl() {
+		return imgurl;
+	}
+	public void setImgurl(String imgurl) {
+		this.imgurl = imgurl;
 	}
 	@Override
 	public String toString() {
-		return "BeachVO [b_name=" + b_name + ", b_explain=" + b_explain + ", b_addr=" + b_addr + ", b_tel=" + b_tel
-				+ ", b_homepage=" + b_homepage + ", id=" + id + "]";
+		return "BeachVO [b_id=" + b_id + ", hotm=" + hotm + ", title=" + title + ", subtitle=" + subtitle + ", topic="
+				+ topic + ", area=" + area + ", addr=" + addr + ", tel=" + tel + ", homepage=" + homepage + ", mapurl="
+				+ mapurl + ", imgurl=" + imgurl + "]";
 	}
-	public BeachVO(String b_name, String b_explain, String b_addr, String b_tel, String b_homepage, long id) {
+	public BeachVO(int b_id, int hotm, String title, String subtitle, String topic, String area, String addr,
+			String tel, String homepage, String mapurl, String imgurl) {
 		super();
-		this.b_name = b_name;
-		this.b_explain = b_explain;
-		this.b_addr = b_addr;
-		this.b_tel = b_tel;
-		this.b_homepage = b_homepage;
-		this.id = id;
+		this.b_id = b_id;
+		this.hotm = hotm;
+		this.title = title;
+		this.subtitle = subtitle;
+		this.topic = topic;
+		this.area = area;
+		this.addr = addr;
+		this.tel = tel;
+		this.homepage = homepage;
+		this.mapurl = mapurl;
+		this.imgurl = imgurl;
 	}
 	public BeachVO() {
 		super();
 	}
-	
+    
+    
 }

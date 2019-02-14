@@ -28,27 +28,30 @@ public class HomeController {
 	}
 	
 	@RequestMapping("main")
-	public String main() {
+	public String main(Model model) {
+		
+		List<MemoVO> recentList=beachService.selectRecentMemo();
+		List<BeachVO> recommendBeach=beachService.selectRecommend();
+		model.addAttribute("RECENTLIST", recentList);
+		model.addAttribute("RECOMMENDLIST", recommendBeach);
 		
 		return "main";
 	}
 	
 	@RequestMapping(value="sub", method=RequestMethod.GET)
-	public String sub(Model model) {
+	public String sub(@Param("area") String area, Model model) {
 		
-		List<BeachVO> beachList=beachService.selectAll();
+		List<BeachVO> beachList=beachService.selectArea(area);
 		model.addAttribute("BLIST", beachList);
 		
 		return "sub";
 	}
 	
 	@RequestMapping(value="ex", method=RequestMethod.GET)
-	public String ex(@Param("id") long id, Model model) {
+	public String ex(@Param("b_id") int b_id, Model model) {
 		
-		List<BeachVO> beachList=beachService.selectAll();
-		BeachVO beach=beachService.findByName(id);
-		List<MemoVO> memo=beachService.findByMemo(id);
-		model.addAttribute("BLIST", beachList);
+		BeachVO beach=beachService.findByName(b_id);
+		List<MemoVO> memo=beachService.findByMemo(b_id);
 		model.addAttribute("BEACH", beach);
 		model.addAttribute("MEMO", memo);
 		
@@ -59,7 +62,7 @@ public class HomeController {
 		
 		int ret=beachService.insert(vo);
 		
-		return "main";
+		return "redirect:/";
 	}
 }
 

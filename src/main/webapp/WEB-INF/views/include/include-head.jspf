@@ -6,14 +6,55 @@
 <script>
 	$(document).ready(function(){
 		$("#btn_cc").click(function(){
-			location.href="sub"
+			location.href="sub?area=cc"
+		})
+		$("#btn_jj").click(function(){
+			location.href="sub?area=jj"
+		})
+		$("#btn_gg").click(function(){
+			location.href="sub?area=gg"
+		})
+		$("#btn_gs").click(function(){
+			location.href="sub?area=gs"
+		})
+		$("#btn_gw").click(function(){
+			location.href="sub?area=gw"
+		})
+		$("#btn_jl").click(function(){
+			location.href="sub?area=jl"
 		})
 		$("#btn_home").click(function(){
 			location.href="main"
 		})
 		$(".sub_btn").click(function(){
 			var beach_id=$(this).attr("data-beach-id")
-			location.href="/beach/ex?id="+beach_id
+			location.href="/beach/ex?b_id="+beach_id
+		})
+		$(".sub_img").click(function(){
+			var beach_id=$(this).attr("data-beach-id")
+			location.href="/beach/ex?b_id="+beach_id
 		})
 	})
+	
+	jQuery(function($) {
+  
+	var doAnimations = function() {
+    var offset = $(window).scrollTop() + $(window).height(),
+        $animatables = $('.animatable');
+    
+    if ($animatables.length == 0) {
+      $(window).off('scroll', doAnimations);
+    }
+    
+		$animatables.each(function(i) {
+       var $animatable = $(this);
+			if (($animatable.offset().top + $animatable.height() - 20) < offset) {
+        $animatable.removeClass('animatable').addClass('animated');
+			}
+    });
+	};
+	$(window).on('scroll', doAnimations);
+    $(window).trigger('scroll');
+
+});
 </script>
