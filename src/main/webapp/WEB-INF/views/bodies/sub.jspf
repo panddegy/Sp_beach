@@ -1,0 +1,22 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<c:set var="rootPath" value="${pageContext.request.contextPath}" />
+
+<div class="sub-wrapper">
+	<c:choose>
+		<c:when test="${empty BLIST}">
+			검색결과가 없습니다.
+		</c:when>
+		<c:otherwise>
+		<c:forEach var="vo" items="${BLIST}">
+			<div class="sub-btn animatable fadeInUp" id="${vo.title}" data-beach-id="${vo.b_id}">
+				<p class="p-title">${vo.title}</p>
+				<div class="sub-img-wrapper">
+					<img class="sub-img" alt="해수욕장사진" src="${rootPath}/${vo.imgurl}" width="280" height="180">
+				</div>
+			</div>
+		</c:forEach>
+	</c:otherwise>
+	</c:choose>
+</div>

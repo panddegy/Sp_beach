@@ -3,58 +3,86 @@
 <title>Beach info.</title>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <link rel="stylesheet" href="/beach/css/main.css">
+<link rel="stylesheet" href="/beach/css/sub.css">
+<link rel="stylesheet" href="/beach/css/ex.css">
+<link rel="stylesheet" href="/beach/css/animation.css">
+<link rel="stylesheet" href="/beach/css/admin.css">
+<link href="https://fonts.googleapis.com/css?family=Chonburi|Hi+Melody" rel="stylesheet">
+
 <script>
-	$(document).ready(function(){
-		$("#btn_cc").click(function(){
-			location.href="sub?area=cc"
-		})
-		$("#btn_jj").click(function(){
-			location.href="sub?area=jj"
-		})
-		$("#btn_gg").click(function(){
-			location.href="sub?area=gg"
-		})
-		$("#btn_gs").click(function(){
-			location.href="sub?area=gs"
-		})
-		$("#btn_gw").click(function(){
-			location.href="sub?area=gw"
-		})
-		$("#btn_jl").click(function(){
-			location.href="sub?area=jl"
-		})
-		$("#btn_home").click(function(){
-			location.href="main"
-		})
-		$(".sub_btn").click(function(){
-			var beach_id=$(this).attr("data-beach-id")
-			location.href="/beach/ex?b_id="+beach_id
-		})
-		$(".sub_img").click(function(){
-			var beach_id=$(this).attr("data-beach-id")
-			location.href="/beach/ex?b_id="+beach_id
-		})
+$(function(){
+	$(".main-btn").click(function(){
+		var area=$(this).attr("data-area-id")
+		location.href="/beach/sub/"+area
 	})
 	
-	jQuery(function($) {
+	$(".login-btn").click(function(){
+		location.href="/beach/login"
+	})
+	
+	$(".main-img-wrapper").click(function(){
+		var beach_id=$(this).attr("data-beach-id")
+		location.href="/beach/ex/"+beach_id
+	})
+	
+	$(".btn-home").click(function(){
+		location.href="/beach"
+	})
+	
+	$(".sub-btn").click(function(){
+		var beach_id=$(this).attr("data-beach-id")
+		location.href="/beach/ex/"+beach_id
+	})
+	
+	$(".sub-img").click(function(){
+		var beach_id=$(this).attr("data-beach-id")
+		location.href="/beach/ex/"+beach_id
+	})
+	
+	var marginTop=$("header").outerHeight()
+	$(".section-top").css("margin-top", marginTop)
+	
+	var marginBottom=$("footer").outerHeight()
+	$(".section-bottom").css("height", marginBottom)
+	
+})
+
+$(function($){
   
 	var doAnimations = function() {
-    var offset = $(window).scrollTop() + $(window).height(),
-        $animatables = $('.animatable');
-    
-    if ($animatables.length == 0) {
-      $(window).off('scroll', doAnimations);
-    }
-    
+	   	var offset = $(window).scrollTop() + $(window).height(),
+	       	$animatables = $('.animatable');
+	   
+	   	if ($animatables.length == 0) {
+	   		$(window).off('scroll', doAnimations);
+		}
+	    
 		$animatables.each(function(i) {
-       var $animatable = $(this);
+			var $animatable = $(this);
 			if (($animatable.offset().top + $animatable.height() - 20) < offset) {
-        $animatable.removeClass('animatable').addClass('animated');
+	    		$animatable.removeClass('animatable').addClass('animated');
 			}
-    });
+		});
 	};
+	
 	$(window).on('scroll', doAnimations);
     $(window).trigger('scroll');
-
 });
+
 </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

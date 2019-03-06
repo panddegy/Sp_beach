@@ -14,15 +14,13 @@ public interface BeachDao {
 	@Select(" select * from tbl_main where b_id=#{b_id} ")
 	public BeachVO findByName(int b_id);
 	
-	@Select(" select * from tbl_memo where b_id=#{b_id} ")
-	public List<MemoVO> findByMemo(int b_id);
-	
-	@Insert(" insert into tbl_memo values(seq_memo.nextval, #{b_id}, #{m_auth}, #{m_date}, #{m_memo}, #{b_title} )")
-	public int insert(MemoVO vo);
-	
-	@Select(" select * from tbl_memo order by m_date desc ")
-	public List<MemoVO> selectRecentMemo();
-	
 	@Select(" select * from tbl_main where hotm=#{mounth} ")
 	public List<BeachVO> selectRecommend(int mounth);
+	
+	@Select(" select area from tbl_main group by area order by area ")
+	public String[] getMenus();
+	
+	@Select(" select * from tbl_main where title like #{search} ")
+	public List<BeachVO> searchBeach(String search);
+	
 }

@@ -1,276 +1,205 @@
 @charset "UTF-8";
 
-*{
+* {
 	box-sizing: border-box;
 	-webkit-box-sizing: border-box;
 	-moz-box-sizing: border-box;
-}
-body{
-	max-width: 80%;
-	margin: 0 auto;
+	font-family: 'Hi Melody', cursive;
 }
 
-header{
-	background-color: white;
-	color: dodgerblue;
-}
-nav{
-	background-color: white;
-	border: none;
-	border-bottom: 1px solid dodgerblue;
-	border-top: 1px solid dodgerblue;
-	text-align: center;
-}
-section{
-	max-width: 80%;
-	margin: 0px auto;
-	margin-top: 50px;
-}
-footer{
-	height: 100px;
-	margin-top: 50px;
-	margin-bottom: 100px;
-	border: none;
-	border-bottom: 1px solid dodgerblue;
-	border-top: 1px solid dodgerblue;
-}
-#btn_home{
-	border: none;
-	background-color: white;
-	color: dodgerblue;
-	font-size: 35px;
-	font-style: italic;
-	cursor: pointer;
+body {
+	margin: 0;
+	padding: 0;
 }
 
-.main_btn{
-	padding: 4px 16px;
-	margin: none;
-	margin-left: 10px;
-	margin-right: 10px;
-	background-color: white;
-	border: none;
-	color: dodgerblue;
-	font-size: 15px;
-	cursor: pointer;
-	text-decoration: none;
-	transition-duration: 0.5s;
-}
-.main_btn:hover{
-	background-color: dodgerblue;
-	color: white;	
-}
-.sub_btn_wrapper{
-	display: inline-block;
-	width: 280px;
-	height: 210px;
-	margin: 10px;
-}
-
-.sub_btn{
+header {
 	display: block;
-	padding: 4px;
-	margin: none;
-	background-color: rgba(255,255,255,0);
-	border: none;
-	color: dodgerblue;
-	font-size: 15px;
-	cursor: pointer;
-	text-decoration: none;
-	transition-duration: 0.5s;
+	position: fixed;
+	top: 0;
+	right: 0;
+	left: 0;
+	z-index: 100;
+	height: 200px;
+	margin: 0;
+	padding: 0;
+	background-color: white;
+	text-align: center;
+	opacity: 0.9;
 }
-.sub_btn:hover{
+
+nav {
+	text-align: center;
 	background-color: dodgerblue;
-	color: white;	
 }
 
-.animatable {
-  
-  visibility: hidden;
-  
-  -webkit-animation-play-state: paused;   
-  -moz-animation-play-state: paused;     
-  animation-play-state: paused; 
+.main-btn {
+	padding: 8px 16px;
+	background-color: inherit;
+	border: none;
+	color: white;
+	outline: none;
+	cursor: pointer;
+	font-size: 15px;
+	transition-duration: 0.3s;
 }
 
-.animated {
-  visibility: visible;
-  
-  -webkit-animation-fill-mode: both;
-  -moz-animation-fill-mode: both;
-  animation-fill-mode: both;
-  
-  -webkit-animation-duration: 0.5s;
-  -moz-animation-duration: 0.5s;
-  animation-duration: 0.5s;
-
-  -webkit-animation-play-state: running;
-  -moz-animation-play-state: running;
-  animation-play-state: running;
-}
-@-webkit-keyframes fadeInUp {
-	from {
-		opacity: 0;
-		-webkit-transform: translateY(20px);
-	}	
-	to {
-		opacity: 1;
-		-webkit-transform: translateY(0);
-	}
+.main-btn:hover {
+	background-color: lightblue;
+	color: darkblue;
 }
 
-@-moz-keyframes fadeInUp {
-	from {
-		opacity: 0;
-		-moz-transform: translateY(20px);
-	}
-	to {
-		opacity: 1;
-		-moz-transform: translateY(0);
-	}
+.login-btn {
+	padding: 8px 16px;
+	background-color: inherit;
+	border: none;
+	color: white;
+	outline: none;
+	cursor: pointer;
+	font-size: 15px;
+	transition-duration: 0.3s;
 }
 
-@keyframes fadeInUp {
-	from {
-		opacity: 0;
-		transform: translateY(20px);
-	}
-	to {
-		opacity: 1;
-		transform: translateY(0);
-	}
+.login-btn:hover {
+	background-color: lightblue;
+	color: darkblue;
 }
 
-.main_fieldset{
-	width: 80%;
-	height: 300px;
-	margin: 0 auto;
-	margin-bottom: 50px;
-	color: dodgerblue;	
-	border: 1px solid dodgerblue;
-	
+section {
+	display: flex;
+	flex-direction: column;
+	position: relative;
+	justify-content: center;
+	z-index: 50;
+	margin: 0;
+	padding: 0;
+	margin-bottom: 200px;
+	background-color: white;
 }
 
-.main_legend{
-	color: dodgerblue;
-	font-size: 20px;
-	font-style: italic;
-}
-
-.animated.fadeInUp {
-	-webkit-animation-name: fadeInUp;
-	-moz-animation-name: fadeInUp;
-	animation-name: fadeInUp;
-}
-
-#ex_fieldset{
-	max-width: 1000px;
-	margin: 0 auto;
-	margin-bottom: 50px;
-	color: dodgerblue;	
-	border: 1px solid dodgerblue;
+footer {
+	display: block;
+	position: fixed;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	z-index: 20;
+	margin: 0;
+	padding: 0;
+	height: 200px;
 	text-align: center;
 }
-#ex_legend{
-	color: dodgerblue;
+
+.btn-home{
+	cursor: pointer;
+}
+
+.section-middle{
+	display: flex;
+	flex-direction: column;
+	margin: 0 auto;
+	justify-content: center;
+	width: 80%;
+}
+
+.main-search{
+	display: flex;
+	justify-content: center;
+	padding: 0.5rem;
+	margin: 20px;
+	text-align: center;	
+	font-size: 50px;
+}
+
+#b_search{
+	width: 300px;
+	padding: 0.5rem;
+	margin: 5px;
+	color: darkblue;
 	font-size: 30px;
-	font-style: italic;
-	cursor: pointer;
-}
-#ex_img{
-	float: left;
-	margin: 10px;
-}
-#ex_map{
-	float: left;
-	margin: 10px;
-	
-}
-#ex_text{
-	width: 100%;
-	display: inline-block;
-	margin: 0 auto;
-	text-align: left;
-	
-}
-#ex_subtitle{
-	font-size: 20px;
 }
 
-#btn_submit{
-	padding: 4px;
-	margin: none;
-	background-color: rgba(255,255,255,0);
-	border: 1px solid dodgerblue;
-	color: dodgerblue;
-	font-size: 15px;
-	cursor: pointer;
-	text-decoration: none;
-	transition-duration: 0.5s;
-}
-#btn_submit:hover{
+.btn-search {
+	padding: 2px 4px;
+	margin: 5px;
 	background-color: dodgerblue;
-	color: white;	
-}
-
-#m_auth{
-	padding: 4px 8px;
-	max-width: 100px;
-}
-
-#m_memo{
-	padding: 4px 8px;
-	max-width: 500px;
-}
-
-#view_memo{
-	width: 500px;
-}
-#view_date{
-	width: 100px;
-	
-}
-#view_auth{
-	width: 100px;
-	
-}
-#view_title{
-	width: 150px;
-	
-}
-#views{
-	margin: 0 auto;
-	font-size: 15px;
-	text-align: left;
-}
-#main_list{
+	border: none;
+	color: white;
+	outline: 1px solid dodgerblue;
 	cursor: pointer;
+	font-size: 30px;
+	transition-duration: 1s;
 }
 
-#main_td{
-	border-spacing: 10px;
+.btn-search:hover {
+	outline: 1px solid rgba(255,255,255,0);
+	outline-offset: 10px;
 }
-.sub_img_wrapper{
-	max-width: 280px;
-	height: 180px;
+
+.main-title{
+	padding: 0.5rem;
+	margin: 50px;
+	color: dodgerblue;
+	text-align: center;
+	font-size: 40px;
+	font-style: italic;
+}
+
+.re-container{
+	display: flex;
+	flex-flow: row wrap;
+	justify-content: center;
+
+}
+
+.re-wrapper{
+	display: flex;
+	flex-direction: column;
+}
+
+.main-img-wrapper{
+	width: 460px;
+	height: 370px;
+	overflow: hidden;
+	margin: 5px;
+	cursor: pointer;
+	outline: 1px solid lightblue;
+	outline-offset: 4px;
+}
+
+.main-img{
 	overflow: hidden;
 }
 
-.main_img_wrapper{
-	max-width: 160px;
-	height: 120px;
-	overflow: hidden;
+.main-img:hover{
+	animation: changeScale 2s;
 }
 
-.sub_img{
-	transition-duration: 0.5s;
+.main-text{
+	width: 460px;
+	height: 370px;
+	color: dodgerblue;
+	font-size: 20px;
+	margin: 5px;
+}
+
+.p-title{
+	font-size: 25px;
+	font-style: italic;
+	color: dodgerblue;
+}
+
+.rc-wrapper{
+	display: flex;
+	flex-direction: column;
+}
+
+.rc-container{
+	display: flex;
+	flex-flow: row wrap;
+	margin: 5px;
+	justify-content: center;
+	color: dodgerblue;
+	font-size: 25px;
 	cursor: pointer;
 }
 
-.sub_img:hover{
-	transform: scale(1.1);
-}
-
-#main_table{
-	max-width: 100%;
-}

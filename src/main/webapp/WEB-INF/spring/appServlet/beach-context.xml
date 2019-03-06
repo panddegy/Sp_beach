@@ -21,8 +21,14 @@
 		<constructor-arg index="0" ref="sqlSessionFactory"></constructor-arg>
 	</bean>
 	
-	<bean id="beachMapper" class="org.mybatis.spring.mapper.MapperFactoryBean">
+	<bean id="bMapper" class="org.mybatis.spring.mapper.MapperFactoryBean">
 		<property name="mapperInterface" value="com.biz.beach.model.BeachDao"/>
 		<property name="sqlSessionTemplate" ref="sqlSession"/>
 	</bean>
+	
+	<bean id="mMapper" class="org.mybatis.spring.mapper.MapperFactoryBean">
+		<property name="mapperInterface" value="com.biz.beach.model.MemoDao"/>
+		<property name="sqlSessionTemplate" ref="sqlSession"/>
+	</bean>
+	
 </beans>

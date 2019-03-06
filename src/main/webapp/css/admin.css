@@ -1,0 +1,62 @@
+@charset "UTF-8";
+
+.login-form{
+	display: flex;
+	flex-direction: column;
+	margin: 50px;
+}
+
+.con-form{
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	margin: 10px;
+	font-size: 20px;
+}
+
+.con-form label{
+	flex: 0 0 auto;
+	width: 80px;
+	padding: 2px 4px;
+}
+.con-form input{
+	flex: 0 0 auto;
+	margin-left: 10px;
+	width: 300px;
+}
+
+.con-form button{
+	flex: 0 0 auto;
+	margin-left: 10px;
+	width: 300px;
+	padding: 8px 16px;
+	cursor: pointer;
+	transition-duration: 0.5s;
+	border: 1px solid dodgerblue;
+}
+
+.con-form button:hover{
+	color: white;
+	background-color: dodgerblue;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,80 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<c:set var="rootPath" value="${pageContext.request.contextPath}" />
+<script type="text/javascript">
+$(function(){
+	$(".btn-search").click(function(){
+		var search=$("#b_search").val()
+		if(search==""){
+			alert("input search")
+			$("#b_search").focus()
+			return false
+		}
+		location.href="${rootPath}/search/"+search
+	})
+	
+	$(".rc-container").click(function(){
+		var beach_id=$(this).attr("data-beach-id")
+		location.href="/beach/ex/"+beach_id
+	})
+})
+</script>
+	<div class="main-search">
+		<input type="text" id="b_search" name="b_search" placeholder="검색어를 입력하세요">
+		<button type="button" class="btn-search">Search</button>
+	</div>
+	<article class="main-title">
+		${HOTM}월의 추천해변
+	</article>
+	<article class="re-wrapper">
+		<c:forEach var="RE" items="${RELIST}" varStatus="i">
+			<c:if test="${i.count%2==1}">
+			<div class="re-container animatable fadeInUp">
+				<div class="main-img-wrapper" data-beach-id="${RE.b_id}">
+				<img alt="추천해변" class="main-img" src="${RE.imgurl}">
+				</div>
+				<div class="main-text">
+				<p class="p-title">${RE.title}<br>
+				<p>${RE.subtitle}<br>
+				</div>
+			</div>
+			</c:if>
+			<c:if test="${i.count%2==0}">
+			<div class="re-container animatable fadeInUp">
+				<div class="main-text">
+				<p class="p-title"><i>${RE.title}</i><br>
+				<p>${RE.subtitle}<br>
+				</div>
+				<div class="main-img-wrapper" data-beach-id="${RE.b_id}">
+				<img alt="추천해변" class="main-img" src="${RE.imgurl}">
+				</div>
+			</div>
+			</c:if>
+		</c:forEach>
+	</article>
+	<article class="main-title">
+		여행 후기
+	</article>
+	<article class="rc-wrapper">
+		<c:forEach var="RC" items="${RCLIST}">
+		<div class="rc-container" id="${RC.b_title}" data-beach-id="${RC.b_id}">
+			${RC.m_memo} - ${RC.b_title}(${RC.m_date})
+			</div>
+		</c:forEach>
+	</article>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,29 @@
+@charset "UTF-8";
+
+.sub-wrapper{
+	display: flex;
+	flex-flow: row wrap;
+	margin: 0 auto;
+	justify-content: center;
+}
+
+.sub-btn{
+	margin: 20px;
+	cursor: pointer;
+}
+
+.sub-img-wrapper{
+	width: 280px;
+	height: 180px;
+	overflow: hidden;
+	outline: 1px solid lightblue;
+	outline-offset: 4px;
+}
+
+.sub-img:hover{
+	animation: changeScale 2s;
+}
+
+
+
+

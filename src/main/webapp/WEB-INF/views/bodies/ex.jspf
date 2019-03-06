@@ -1,0 +1,93 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<c:set var="rootPath" value="${pageContext.request.contextPath}" />
+<script type="text/javascript">
+$(function(){
+	$(".btn-submit").click(function(){
+		var auth=$("#m_auth").val()
+		var memo=$("#m_memo").val()
+		if(auth==""){
+			alert("input author")
+			$("#m_auth").focus()
+			return false
+		}
+		if(memo==""){
+			alert("input text")
+			$("#m_memo").focus()
+			return false
+		}
+		$("form").submit()
+	})
+})
+</script>
+
+	<fieldset class="ex-fieldset">
+	<legend class="ex-legend" onclick="window.open('${BEACH.homepage}')" title="관련사이트">${BEACH.title}</legend>
+	<div class="ex-wrapper">
+		<div class="ex-img-wrapper">
+			<img class="ex-img" alt="해수욕장사진" src="${rootPath}/${BEACH.imgurl}" width="462" height="370">
+		</div>
+		<div class="ex-map">${BEACH.mapurl}</div>
+	</div>
+	<div class="ex-text">
+		<div class="ex-subtitle">${BEACH.subtitle}</div>
+		<div class="ex-container">
+			<div class="ex-sub">Activity</div>
+			<div class="ex-con">${BEACH.topic}</div>
+		</div>
+		<div class="ex-container">
+			<div class="ex-sub">Address</div>
+			<div class="ex-con">${BEACH.addr}</div>
+		</div>
+		<div class="ex-container">
+			<div class="ex-sub">Telephone</div>
+			<div class="ex-con">${BEACH.tel}</div>
+		</div>
+	</div>
+	<div class="ex-bottom">
+		<div class="ex-subtitle">후기</div>
+		<div class="ex-table-wrapper">
+			<c:choose>
+				<c:when test="${empty MEMO}">
+				</c:when>
+				<c:otherwise>
+					<table class="views">
+						<c:forEach var="memo" items="${MEMO}">
+							<tr class="views-row">
+								<td class="view-memo">${memo.m_memo}</td>
+								<td class="view-auth">&nbsp;-&nbsp;${memo.m_auth}(${memo.m_date})</td>
+							</tr>
+						</c:forEach>
+					</table>	
+				</c:otherwise>
+			</c:choose>
+		</div>
+		<div class="ex-form-wrapper">
+			<form action="${rootPath}/write" method="POST"> 
+				<input type="hidden" id="b_id" name="b_id" value="${BEACH.b_id}">
+				<input type="hidden" id="b_title" name="b_title" value="${BEACH.title}">
+				<div class="ex-form-container">
+					<input type="text" id="m_auth" name="m_auth" placeholder="작성자">
+					<input type="text" id="m_memo" name="m_memo" placeholder="한줄평을 입력하세요(255자)">
+					<select id="m_grade" name="m_grade">
+						<option>1</option>
+						<option>2</option>
+						<option>3</option>
+						<option>4</option>
+						<option>5</option>
+					</select>
+					<button type="button" class="btn-submit">submit</button>
+				</div>
+			</form>
+		</div>
+	</div>
+	</fieldset>
+	
+	
+	
+	
+	
+	
+	
+	

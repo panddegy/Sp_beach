@@ -1,0 +1,39 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<script type="text/javascript">
+$(function(){
+	$(".login-submit-btn").click(function(){
+		var id=$("#admin_id").val()
+		var pass=$("admin_pass").val()
+		if(id==""){
+			alert("input id")
+			$("#admin_id").focus()
+			return false
+		}
+		if(pass==""){
+			alert("input password")
+			$("#admin_pass").focus()
+			return false
+		}
+		$("form").submit()
+	})
+})
+</script>
+
+<form action="login" method="post">
+	<div class="login-form">
+		<div class="con-form">
+			<label for="admin_id">AdminID</label>
+			<input type="text" id="admin_id" name="admin_id">
+		</div>
+		<div class="con-form">
+			<label for="admin_pass">Password</label>
+			<input type="password" id="admin_pass" name="admin_pass">
+		</div>
+		<div class="con-form">
+			<label></label>
+			<button class="login-submit-btn" type="button">Login</button>
+		</div>
+	</div>
+</form>
