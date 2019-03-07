@@ -5,14 +5,14 @@
 $(function(){
 	$(".login-submit-btn").click(function(){
 		var id=$("#admin_id").val()
-		var pass=$("admin_pass").val()
+		var pass=$("#admin_pass").val()
 		if(id==""){
-			alert("input id")
+			alert("아이디를 입력하세요.")
 			$("#admin_id").focus()
 			return false
 		}
 		if(pass==""){
-			alert("input password")
+			alert("비밀번호를 입력하세요.")
 			$("#admin_pass").focus()
 			return false
 		}

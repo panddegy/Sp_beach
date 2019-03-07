@@ -12,10 +12,10 @@
 		<img class="btn-home" src="${rootPath}/resources/logo2.png" title="HOME" height="150px">
 		<nav>
 			<c:choose>
-				<c:when test="${BODY=='ADMIN'}">
-					<button class="login-btn">해변관리</button>
-					<button class="login-btn">후기관리</button>
-					<button class="login-btn">로그아웃</button>
+				<c:when test="${MENUTYPE=='ADMIN'}">
+					<button class="admin-btns" id="system-btn">시스탬관리</button>
+					<button class="admin-btns" id="adminmag-btn">사용자관리</button>
+					<button class="admin-btns" id="logout-btn">로그아웃</button>
 				</c:when>
 				<c:otherwise>
 				<c:forEach var="menu" items="${MENU}">
@@ -44,6 +44,15 @@
 			</c:if>
 			<c:if test="${BODY=='ADMIN'}">
 				<%@ include file="/WEB-INF/views/bodies/admin.jspf" %>
+			</c:if>
+			<c:if test="${BODY=='ADMINFAIL'}">
+				<%@ include file="/WEB-INF/views/bodies/adminfail.jspf" %>
+			</c:if>
+			<c:if test="${BODY=='DATA'}">
+				<%@ include file="/WEB-INF/views/bodies/adminData.jspf" %>
+			</c:if>
+			<c:if test="${BODY=='ADMINMAG'}">
+				<%@ include file="/WEB-INF/views/bodies/adminManage.jspf" %>
 			</c:if>
 		</article>
 		<article class="section-bottom">

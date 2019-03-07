@@ -20,6 +20,18 @@ $(function(){
 		location.href="/beach/login"
 	})
 	
+	$("#system-btn").click(function(){
+		location.href="/beach/system"
+	})
+	
+	$("#adminmag-btn").click(function(){
+		location.href="/beach/adminmag"
+	})
+	
+	$("#logout-btn").click(function(){
+		location.href="/beach/logout"
+	})
+	
 	$(".main-img-wrapper").click(function(){
 		var beach_id=$(this).attr("data-beach-id")
 		location.href="/beach/ex/"+beach_id
@@ -42,7 +54,7 @@ $(function(){
 	var marginTop=$("header").outerHeight()
 	$(".section-top").css("margin-top", marginTop)
 	
-	var marginBottom=$("footer").outerHeight()
+	var marginBottom=$("footer").outerHeight()*2
 	$(".section-bottom").css("height", marginBottom)
 	
 })

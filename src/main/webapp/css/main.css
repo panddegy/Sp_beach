@@ -64,6 +64,22 @@ nav {
 	color: darkblue;
 }
 
+.admin-btns {
+	padding: 8px 16px;
+	background-color: inherit;
+	border: none;
+	color: white;
+	outline: none;
+	cursor: pointer;
+	font-size: 15px;
+	transition-duration: 0.3s;
+}
+
+.admin-btns:hover {
+	background-color: lightblue;
+	color: darkblue;
+}
+
 section {
 	display: flex;
 	flex-direction: column;
@@ -138,7 +154,7 @@ footer {
 .main-title{
 	padding: 0.5rem;
 	margin: 50px;
-	color: dodgerblue;
+	color: darkblue;
 	text-align: center;
 	font-size: 40px;
 	font-style: italic;
@@ -148,7 +164,6 @@ footer {
 	display: flex;
 	flex-flow: row wrap;
 	justify-content: center;
-
 }
 
 .re-wrapper{
@@ -195,11 +210,50 @@ footer {
 
 .rc-container{
 	display: flex;
-	flex-flow: row wrap;
+	flex-flow: column;
 	margin: 5px;
-	justify-content: center;
+	text-align: center;
 	color: dodgerblue;
 	font-size: 25px;
+}
+
+.rc-container b{
+	color: darkblue;
+}
+
+.rc-container p{
+	margin: 0px;
+	padding: 0px;
+}
+
+.num-container{
+	margin-top: 50px;
+	color: darkblue;
+	font-size: 30px;
+	text-align: center;
 	cursor: pointer;
 }
+
+.num-container span{
+	display: inline-block;
+	margin: 2px 4px;
+	padding: 2px 4px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 

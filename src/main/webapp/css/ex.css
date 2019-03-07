@@ -71,6 +71,14 @@
 	padding: 2px 4px;
 }
 
+.views-row2{
+	display: flex;
+	flex-direction: row;	
+	margin: 2px 0px;
+	padding: 2px 4px;
+	font-size: 25px;
+}
+
 .view-memo{
 	flex: 10 1 auto;
 	text-align: left;

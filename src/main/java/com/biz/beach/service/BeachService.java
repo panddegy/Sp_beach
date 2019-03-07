@@ -1,6 +1,5 @@
 package com.biz.beach.service;
 
-import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -17,6 +16,9 @@ public class BeachService {
 	@Autowired
 	BeachDao bMapper;
 	
+	@Autowired
+	MemoService ms;
+	
 	public List<BeachVO> selectArea(String area){
 		
 		return bMapper.selectArea(area);
@@ -27,17 +29,9 @@ public class BeachService {
 		return bMapper.findByName(b_id);
 	}
 
-	public String getDate() {
-		
-		LocalDate localDate=LocalDate.now();
-		String today=localDate.toString();
-		
-		return today;
-	}
-	
 	public List<BeachVO> selectRecommend() {
 
-		String[] todays=this.getDate().split("-");
+		String[] todays=ms.getDate().split("-");
 		
 		int mounth=Integer.valueOf(todays[1]);
 		return bMapper.selectRecommend(mounth);
@@ -45,7 +39,7 @@ public class BeachService {
 	
 	public String hotM() {
 		
-		String[] today=this.getDate().split("-");
+		String[] today=ms.getDate().split("-");
 		int hotM=Integer.valueOf(today[1]);
 		
 		return ""+hotM;
@@ -61,6 +55,21 @@ public class BeachService {
 		search="%"+search+"%";
 		
 		return bMapper.searchBeach(search);
+	}
+	
+	public List<BeachVO> getHotB(){
+		
+		List<BeachVO> hotBList=new ArrayList<BeachVO>();
+		
+		List<MemoVO> t_List=ms.getHotB();
+		
+		for(MemoVO v:t_List) {
+			BeachVO vo=new BeachVO();
+			vo=bMapper.findByName(v.getB_id());
+			hotBList.add(vo);
+		}
+		
+		return hotBList;
 	}
 }
 

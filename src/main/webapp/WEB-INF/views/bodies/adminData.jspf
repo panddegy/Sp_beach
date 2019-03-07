@@ -1,0 +1,45 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+
+<script>
+$(function(){
+	$(".system-row").click(function(){
+		var m_id=$(this).attr("data-memo-id")
+		var chk=confirm("정말 삭제할까요?")
+		if(chk){
+			location.href="/beach/delete/"+m_id	
+		} else{
+			return false
+		}
+		
+	})
+})
+</script>
+<article class="system-mag">
+	<table>
+		<tr>
+			<th>ID</th>
+			<th>장소</th>
+			<th>작성자</th>
+			<th>작성일자</th>
+			<th>내용</th>
+			<th>평점</th>
+		</tr>
+		<c:forEach var="VO" items="${MLIST}">
+			<c:choose>
+				<c:when test="${empty MLIST}">데이터가 없습니다.</c:when>
+				<c:otherwise>
+					<tr class="system-row" data-memo-id="${VO.m_id}">
+						<td>${VO.m_id}</td>
+						<td>${VO.b_title}</td>
+						<td>${VO.m_auth}</td>
+						<td>${VO.m_date}</td>
+						<td>${VO.m_memo}</td>
+						<td>${VO.m_grade}</td>
+					</tr>				
+				</c:otherwise>
+			</c:choose>
+		</c:forEach>
+	</table>
+</article>

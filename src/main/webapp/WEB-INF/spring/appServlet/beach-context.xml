@@ -31,4 +31,9 @@
 		<property name="sqlSessionTemplate" ref="sqlSession"/>
 	</bean>
 	
+	<bean id="aMapper" class="org.mybatis.spring.mapper.MapperFactoryBean">
+		<property name="mapperInterface" value="com.biz.beach.model.AdminDao"/>
+		<property name="sqlSessionTemplate" ref="sqlSession"/>
+	</bean>
+	
 </beans>

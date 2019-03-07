@@ -7,16 +7,50 @@ $(function(){
 	$(".btn-search").click(function(){
 		var search=$("#b_search").val()
 		if(search==""){
-			alert("input search")
+			alert("검색어를 입력하세요.")
 			$("#b_search").focus()
 			return false
 		}
 		location.href="${rootPath}/search/"+search
 	})
 	
-	$(".rc-container").click(function(){
-		var beach_id=$(this).attr("data-beach-id")
-		location.href="/beach/ex/"+beach_id
+	$(".page-num").click(function(){
+		var page_id=$(this).attr("data-page-id")
+		$.ajaxSettings.traditional = true;
+		$.ajax({
+			url : "${rootPath}/page",
+			method:"POST",
+			traditional:true,
+			data:{page_id:page_id},
+			dataType:"JSON",
+			success:function(result){
+				var text=""
+				for(var i=0; i<result.length; i++){
+					text+="<p>"+result[i]+"</p>"
+				}
+				$(".rc-container").html(text)
+			},
+			error : function(){
+				alert("서버와 통신 오류.")
+			}
+		})
+	})
+	$.ajaxSettings.traditional = true;
+	$.ajax({
+		url : "${rootPath}/rcmemo",
+		method:"POST",
+		traditional:true,
+		dataType:"JSON",
+		success:function(result){
+			var text=""
+			for(var i=0; i<result.length; i++){
+				text+="<p>"+result[i]+"</p>"
+			}
+			$(".rc-container").html(text)
+		},
+		error : function(){
+			alert("서버와 통신 오류.")
+		}
 	})
 })
 </script>
@@ -54,14 +88,45 @@ $(function(){
 		</c:forEach>
 	</article>
 	<article class="main-title">
-		여행 후기
+		평점 TOP3 해변
+	</article>
+	<article class="re-wrapper">
+		<c:forEach var="HB" items="${HOTB}" varStatus="i">
+			<c:if test="${i.count%2==1}">
+			<div class="re-container animatable fadeInUp">
+				<div class="main-img-wrapper" data-beach-id="${HB.b_id}">
+				<img alt="추천해변" class="main-img" src="${HB.imgurl}">
+				</div>
+				<div class="main-text">
+				<p class="p-title">${HB.title}<br>
+				<p>${HB.subtitle}<br>
+				</div>
+			</div>
+			</c:if>
+			<c:if test="${i.count%2==0}">
+			<div class="re-container animatable fadeInUp">
+				<div class="main-text">
+				<p class="p-title"><i>${HB.title}</i><br>
+				<p>${HB.subtitle}<br>
+				</div>
+				<div class="main-img-wrapper" data-beach-id="${HB.b_id}">
+				<img alt="추천해변" class="main-img" src="${HB.imgurl}">
+				</div>
+			</div>
+			</c:if>
+		</c:forEach>
+	</article>
+	<article class="main-title">
+		최근 여행 후기
 	</article>
 	<article class="rc-wrapper">
-		<c:forEach var="RC" items="${RCLIST}">
-		<div class="rc-container" id="${RC.b_title}" data-beach-id="${RC.b_id}">
-			${RC.m_memo} - ${RC.b_title}(${RC.m_date})
-			</div>
-		</c:forEach>
+		<div class="rc-container">
+		</div>
+		<div class="num-container">
+			<c:forEach var="num" items="${NUM}">
+			<span class="page-num" data-page-id="${num}">${num}</span>
+			</c:forEach>
+		</div>
 	</article>
 
 

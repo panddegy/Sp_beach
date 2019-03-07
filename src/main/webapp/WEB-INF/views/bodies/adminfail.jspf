@@ -3,6 +3,5 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 
 	<article class="main-title">
-		${STATUS}이 성공하였습니다.
+		${STATUS}을 실패하였습니다.
 	</article>
-
