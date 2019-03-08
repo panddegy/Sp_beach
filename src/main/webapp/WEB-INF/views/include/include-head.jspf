@@ -7,7 +7,7 @@
 <link rel="stylesheet" href="/beach/css/ex.css">
 <link rel="stylesheet" href="/beach/css/animation.css">
 <link rel="stylesheet" href="/beach/css/admin.css">
-<link href="https://fonts.googleapis.com/css?family=Chonburi|Hi+Melody" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Hi+Melody&amp;subset=korean" rel="stylesheet">
 
 <script>
 $(function(){

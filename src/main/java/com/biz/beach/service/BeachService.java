@@ -63,9 +63,9 @@ public class BeachService {
 		
 		List<MemoVO> t_List=ms.getHotB();
 		
-		for(MemoVO v:t_List) {
+		for(int i=0; i<3; i++) {
 			BeachVO vo=new BeachVO();
-			vo=bMapper.findByName(v.getB_id());
+			vo=bMapper.findByName(t_List.get(i).getB_id());
 			hotBList.add(vo);
 		}
 		

@@ -34,7 +34,7 @@ nav {
 
 .main-btn {
 	padding: 8px 16px;
-	background-color: inherit;
+	background-color: dodgerblue;
 	border: none;
 	color: white;
 	outline: none;
@@ -50,7 +50,7 @@ nav {
 
 .login-btn {
 	padding: 8px 16px;
-	background-color: inherit;
+	background-color: dodgerblue;
 	border: none;
 	color: white;
 	outline: none;
@@ -66,7 +66,7 @@ nav {
 
 .admin-btns {
 	padding: 8px 16px;
-	background-color: inherit;
+	background-color: dodgerblue;
 	border: none;
 	color: white;
 	outline: none;
@@ -240,9 +240,21 @@ footer {
 	padding: 2px 4px;
 }
 
+::-webkit-scrollbar {
+	width: 10px;
+}
 
+::-webkit-scrollbar-track {
+	background: white;
+}
+ 
+::-webkit-scrollbar-thumb {
+	background: lightblue;
+}
 
-
+::-webkit-scrollbar-thumb:hover {
+	background: lightblue;
+}
 
 
 

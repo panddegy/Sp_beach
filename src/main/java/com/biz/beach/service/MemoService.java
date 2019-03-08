@@ -41,8 +41,12 @@ public class MemoService {
 		
 		List<MemoVO> t_List=mMapper.selectRecentMemo();
 		List<String> retList = new ArrayList<String>();
+		int endNum=10;
+		if(t_List.size()<endNum) {
+			endNum=t_List.size();
+		}
 		
-		for(int i=0; i<10; i++) {
+		for(int i=0; i<endNum; i++) {
 			String rcMemo="<b>"+t_List.get(i).getM_memo()+"</b>&nbsp;&nbsp;-&nbsp;&nbsp;";
 			rcMemo+=t_List.get(i).getB_title()+"("+t_List.get(i).getM_date()+")";
 			retList.add(rcMemo);

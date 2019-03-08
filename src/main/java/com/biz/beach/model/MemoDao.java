@@ -20,7 +20,7 @@ public interface MemoDao {
 	@Select(" select avg(m_grade) from tbl_memo where b_id=#{b_id} ")
 	public String getScore(int b_id);
 	
-	@Select(" select * from avgBeach where rownum <= 3 order by avgB desc ")
+	@Select(" select * from avgBeach order by avgB desc ")
 	public List<MemoVO> getHotB();
 	
 	@Select(" select * from tbl_memo ")
